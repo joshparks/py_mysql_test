@@ -15,3 +15,15 @@ results = mycursor.fetchall()
 
 for x in results:
     print(x)    
+
+
+# Select with a parameterized WHERE clause and wildcard
+sql = "SELECT * FROM customers WHERE email LIKE %s"
+adr = ("%example.com", )
+
+mycursor.execute(sql, adr)
+
+myresult = mycursor.fetchall()
+
+for x in myresult:
+  print(x)     
